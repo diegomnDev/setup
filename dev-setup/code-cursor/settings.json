@@ -1,0 +1,186 @@
+{
+  "editor.lightbulb.enabled": "off",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "window.title": "${activeEditorMedium}",
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.restoreViewState": true,
+  "workbench.colorTheme": "Tokyo Night",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "editor.find.addExtraSpaceOnTop": true,
+  "editor.padding.top": 36,
+  "editor.stickyScroll.enabled": false,
+  "editor.fontFamily": "Hack Nerd Font Mono",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.lineHeight": 0,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.renderWhitespace": "none",
+  "editor.scrollBeyondLastLine": true,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "on",
+  "editor.find.seedSearchStringFromSelection": "never",
+  // line highlight
+  "editor.renderLineHighlight": "all",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#102032",
+    "editorCursor.foreground": "#ffffff",
+    "terminalCursor.foreground": "#ffffff"
+  },
+  // syntax highlighting
+  "files.associations": {
+    ".env*": "makefile"
+  },
+  // prettier
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // eslint
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.tslint": "explicit",
+    "source.addMissingImports": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@radix-ui"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "debug.javascript.codelens.npmScripts": "never",
+  "explorer.confirmDragAndDrop": false,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.inlineSuggest.enabled": true,
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": true
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "github.copilot.advanced": {},
+  "github.copilot.editor.enableAutoCompletions": true,
+  "git.openRepositoryInParentFolders": "never",
+  "todohighlight.isEnable": true,
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "ctx.prisma.stripeIntegration",
+      "color": "red",
+      "border": "1px solid red",
+      "borderRadius": "4px",
+      "backgroundColor": "rgba(0,0,0,.2)",
+      "isWholeLine": false
+    },
+    {
+      "text": "adminProcedure",
+      "color": "red",
+      "border": "1px solid red",
+      "borderRadius": "4px",
+      "backgroundColor": "rgba(0,0,0,.2)",
+      "isWholeLine": false
+    },
+    {
+      "text": "authProcedure",
+      "color": "red",
+      "border": "1px solid red",
+      "borderRadius": "4px",
+      "backgroundColor": "rgba(0,0,0,.2)",
+      "isWholeLine": false
+    },
+    {
+      "text": "publicProcedure",
+      "color": "green",
+      "border": "1px solid green",
+      "borderRadius": "4px",
+      "backgroundColor": "rgba(0,0,0,.2)",
+      "isWholeLine": false
+    }
+  ],
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "envKeys",
+        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+        "settings": {
+          "foreground": "#19354900"
+        }
+      },
+      {
+        "name": "envKeys",
+        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+        "settings": {
+          "foreground": "#19354900"
+        }
+      },
+      {
+        "name": "envKeys",
+        "scope": "string.quoted.single.ini,constant.numeric.ini,string.quoted.double.ini",
+        "settings": {
+          "foreground": "#19354900"
+        }
+      }
+    ]
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.bracketPairColorization.enabled": true,
+  "cSpell.language": "en,es",
+  "cSpell.enabledFileTypes": {
+    "*": false,
+    "mdx": true,
+    "markdown": true,
+    "plaintext": true,
+    "text": true,
+    "latex": true,
+    "restructuredtext": true,
+    "asciidoc": true
+  }
+}
