@@ -3,12 +3,33 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# History configuration
+HISTSIZE=50000
+SAVEHIST=10000
+setopt extended_history       # Record timestamp
+setopt hist_expire_dups_first # Delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # Ignore duplicated commands
+setopt hist_ignore_space      # Ignore commands that start with space
+setopt hist_verify            # Show command with history expansion before running it
+setopt share_history          # Share history between sessions
+
+# Better completion
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"    # Colored completion
+zstyle ':completion:*' rehash true                         # Automatically find new executables
+
 # Oh-My-Zsh Configuration
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Auto-update behavior
 zstyle ':omz:update' mode auto
+
+# ZSH autosuggestions configuration
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#888888"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # Plugins
 plugins=(
@@ -47,6 +68,34 @@ bindkey "^[[F" end-of-line          # End - move to end of line
 # Editing
 bindkey "^K" kill-line              # Ctrl+K - delete from cursor to end of line
 bindkey "^U" backward-kill-line     # Ctrl+U - delete from cursor to start of line
+
+# === Custom Functions ===
+# Create a directory and cd into it
+mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# Extract most known archives
+extract() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1     ;;
+      *.tar.gz)    tar xzf $1     ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       unar $1        ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xf $1      ;;
+      *.tbz2)      tar xjf $1     ;;
+      *.tgz)       tar xzf $1     ;;
+      *.zip)       unzip $1       ;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *)           echo "'$1' cannot be extracted via extract()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
 
 # === Aliases ===
 # Modern replacements for standard commands
@@ -89,6 +138,16 @@ alias ports='lsof -iTCP -sTCP:LISTEN -P'      # View open ports
 alias path='echo $PATH | tr ":" "\n"'         # Display PATH in readable format
 alias cleanup='fd -H ".*DS_Store" -tf -X rm'  # Remove .DS_Store files
 
+# === Tool Configuration ===
+# FZF Configuration
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --inline-info"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Python development enhancements
+export PYTHONDONTWRITEBYTECODE=1  # Don't create .pyc files
+
 # === Environment Setup ===
 # SDKMAN
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -107,6 +166,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Load Powerlevel10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Initialize zoxide
+eval "$(zoxide init zsh)"
 
 # Load Starship prompt if installed (alternative to Powerlevel10k)
 # command -v starship >/dev/null && eval "$(starship init zsh)"
