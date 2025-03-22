@@ -50,7 +50,8 @@ A comprehensive guide to setting up a MacOS development environment with pre-con
   - [Roadmap](#roadmap)
   - [Changelog](#changelog)
     - [v0.1.0 (2025-03-06)](#v010-2025-03-06)
-    - [v0.2.0 (2025-003-22)](#v020-2025-003-22)
+    - [v0.2.0 (2025-03-22)](#v020-2025-03-22)
+    - [v0.2.1 (2025-03-22)](#v021-2025-03-22)
   - [Support](#support)
   - [License](#license)
   - [Contributing](#contributing)
@@ -250,6 +251,8 @@ sdk install maven
 brew install --cask dbeaver-community pgadmin4 sequel-ace dbngin
 ```
 
+For detailed database installation and configuration instructions, including PostgreSQL, MariaDB, MongoDB, and Redis setup, please refer to the [Database Installation Guide](dev-setup/bbdd/db-installation-guide.md).
+
 ## Applications
 
 ### Productivity Apps
@@ -314,6 +317,7 @@ brew install --cask \
   github \
   figma \
   postman \
+  insomnia \
   mockoon
 
 # Manual installation of Docker Desktop
@@ -579,10 +583,17 @@ brew install p7zip unar  # Archive utilities
 - Included configuration files (.zshrc, settings.json)
 - Added maintenance script
 
-### v0.2.0 (2025-003-22)
+### v0.2.0 (2025-03-22)
 
-- Added BBDD installation and configuration
-- Added BBD management tools
+- Added PostgreSQL, MariaDB, MongoDB, and Redis database configurations
+- Added database connection and management instructions
+
+### v0.2.1 (2025-03-22)
+
+- Added Docker Compose configuration for all databases
+- Added initialization scripts for each database system
+- Added container volume persistence
+- Added container management commands
 
 ## Support
 
