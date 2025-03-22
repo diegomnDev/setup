@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <!-- Background -->
+  <rect width="400" height="120" rx="20" fill="#1e2030" />
+  
+  <!-- Gradient for text -->
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#61DAFB" />
+      <stop offset="50%" stop-color="#BB86FC" />
+      <stop offset="100%" stop-color="#6C63FF" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main text -->
+  <text x="200" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="url(#textGradient)">dmnDev</text>
+  
+  <!-- Decorative dots -->
+  <circle cx="50" cy="30" r="4" fill="#61DAFB" opacity="0.6" />
+  <circle cx="70" cy="25" r="3" fill="#BB86FC" opacity="0.6" />
+  <circle cx="330" cy="35" r="5" fill="#6C63FF" opacity="0.6" />
+  <circle cx="350" cy="25" r="3" fill="#61DAFB" opacity="0.6" />
+  
+  <!-- Code symbols -->
+  <text x="35" y="85" font-family="monospace" font-size="22" fill="#61DAFB" opacity="0.7">{</text>
+  <text x="365" y="85" font-family="monospace" font-size="22" fill="#6C63FF" opacity="0.7">}</text>
+  
+  <!-- Underline -->
+  <path d="M100,90 C150,110 250,110 300,90" stroke="url(#textGradient)" stroke-width="3" fill="none" />
+</svg>
