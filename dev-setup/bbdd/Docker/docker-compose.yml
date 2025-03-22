@@ -1,0 +1,59 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb_postgresql
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres-init.sql:/docker-entrypoint-initdb.d/postgres-init.sql
+    restart: unless-stopped
+
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb-db
+    environment:
+      MARIADB_ROOT_PASSWORD: myrootpassword
+      MARIADB_USER: myuser
+      MARIADB_PASSWORD: mypassword
+      MARIADB_DATABASE: mydb_mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./mariadb-init.sql:/docker-entrypoint-initdb.d/mariadb-init.sql
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: myuser
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
+      MONGO_INITDB_DATABASE: mydb_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: redis-db
+    command: redis-server --requirepass mypassword
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  mariadb_data:
+  mongodb_data:
+  redis_data:
