@@ -1,3 +1,5 @@
+<div align="center">
+
 # MacOS Development Environment Setup
 
 <p align="center">
@@ -10,11 +12,14 @@
 ![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 
-A comprehensive guide to setting up a MacOS development environment with pre-configured dotfiles and automated setup scripts.
+</div>
+
+A comprehensive guide to setting up a MacOS development environment with pre-configured dotfiles and automated setup scripts
 
 ## Table of Contents
 
 - [MacOS Development Environment Setup](#macos-development-environment-setup)
+      - [A comprehensive guide to setting up a MacOS development environment with pre-configured dotfiles and automated setup scripts.](#a-comprehensive-guide-to-setting-up-a-macos-development-environment-with-pre-configured-dotfiles-and-automated-setup-scripts)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
     - [Why This Setup?](#why-this-setup)
