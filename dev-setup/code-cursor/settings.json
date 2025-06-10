@@ -1,44 +1,47 @@
 {
+  // ===== Trust Configuration =====
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.enabled": false,
   // ===== Editor Appearance =====
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "workbench.editor.enablePreview": false,
   "workbench.editor.restoreViewState": true,
+  "workbench.editor.tabSizing": "shrink",
   "breadcrumbs.enabled": true,
-
-  // Cursor and text appearance
-  "editor.fontFamily": "Hack Nerd Font Mono",
+  // ===== Font and Cursor =====
+  "editor.fontFamily": "JetBrains Mono, Hack Nerd Font Mono, Fira Code, Consolas, 'Courier New', monospace",
   "editor.fontSize": 14,
   "editor.lineHeight": 0,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "normal",
   "editor.cursorBlinking": "solid",
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.renderLineHighlight": "all",
   "editor.wordWrap": "on",
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "boundary",
   "editor.scrollBeyondLastLine": true,
   "editor.padding.top": 36,
   "editor.stickyScroll.enabled": false,
   "editor.find.addExtraSpaceOnTop": true,
   "editor.find.seedSearchStringFromSelection": "never",
-
-  // Bracket pairs and guides
+  // ===== Bracket Pairs and Guides =====
   "editor.guides.bracketPairs": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-
-  // Colorizations
+  // ===== Custom Colors =====
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#102032",
     "editorCursor.foreground": "#ffffff",
     "terminalCursor.foreground": "#ffffff"
   },
-
   // ===== Editor Behavior =====
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
@@ -51,11 +54,16 @@
   "editor.linkedEditing": true,
   "editor.lightbulb.enabled": "off",
   "editor.largeFileOptimizations": true,
-
-  // File handling
+  "editor.tabCompletion": "on",
+  "editor.semanticHighlighting.enabled": true,
+  "editor.occurrencesHighlight": "singleFile",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // ===== Autosave and Files =====
+  "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
   "files.associations": {
-    ".env*": "makefile"
+    ".env*": "dotenv"
   },
   "files.exclude": {
     "**/.git": true,
@@ -64,89 +72,38 @@
     "**/__pycache__": true,
     "**/node_modules": true
   },
-
-  // Explorer settings
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "explorer.compactFolders": false,
-
-  // ===== Language Specific Settings =====
-  // Markdown
-  "[markdown]": {
-    "editor.formatOnSave": false,
-    "editor.wordWrap": "on"
-  },
-
-  // JavaScript and TypeScript
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.preferences.autoImportFileExcludePatterns": [
-    "@radix-ui"
-  ],
-  "typescript.updateImportsOnFileMove.enabled": "never",
-  "javascript.validate.enable": false,
-  "javascript.updateImportsOnFileMove.enabled": "prompt",
-  "js/ts.implicitProjectConfig.checkJs": true,
-
-  // Astro
-  "prettier.documentSelectors": [
-    "**/*.astro"
-  ],
-  "[astro]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // ===== Terminal Settings =====
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-  "terminal.integrated.cursorBlinking": true,
-
-  // ===== Window Settings =====
-  "window.titleBarStyle": "native",
-  "window.customTitleBarVisibility": "never",
-  "window.title": "${activeEditorMedium}",
-
-  // ===== Linting & Formatting =====
+  // ===== Code Actions on Save =====
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.fixAll.tslint": "explicit",
-    "source.addMissingImports": "explicit"
+    "source.addMissingImports": "explicit",
+    "source.organizeImports": "explicit"
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-
-  // ===== Debugging =====
-  "debug.javascript.codelens.npmScripts": "never",
-  "debug.inlineValues": "on",
-
+  // ===== Explorer =====
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  // ===== Terminal =====
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono, JetBrains Mono",
+  "terminal.integrated.cursorBlinking": true,
+  // ===== Window =====
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never",
+  "window.title": "${activeEditorMedium}",
   // ===== Git =====
-  "git.openRepositoryInParentFolders": "never",
   "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": true
   },
-
+  // ===== Debugging =====
+  "debug.javascript.codelens.npmScripts": "never",
+  "debug.inlineValues": "on",
   // ===== GitHub Copilot =====
   "github.copilot.enable": {
     "*": true,
@@ -156,9 +113,24 @@
   },
   "github.copilot.advanced": {},
   "github.copilot.editor.enableAutoCompletions": true,
-
+  "githubPullRequests.pullBranch": "never",
+  // ===== ESLint =====
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  // ===== TypeScript =====
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@radix-ui"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.checkJs": true,
   // ===== Spell Checking =====
-  "cSpell.language": "en,es",
+  "cSpell.language": "en,es,en-US",
   "cSpell.enabledFileTypes": {
     "*": false,
     "mdx": true,
@@ -169,46 +141,66 @@
     "restructuredtext": true,
     "asciidoc": true
   },
-
-  // ===== Highlighting =====
-  "todohighlight.isEnable": true,
-  "todohighlight.isCaseSensitive": true,
-  "todohighlight.keywords": [
-    {
-      "text": "ctx.prisma.stripeIntegration",
-      "color": "red",
-      "border": "1px solid red",
-      "borderRadius": "4px",
-      "backgroundColor": "rgba(0,0,0,.2)",
-      "isWholeLine": false
-    },
-    {
-      "text": "adminProcedure",
-      "color": "red",
-      "border": "1px solid red",
-      "borderRadius": "4px",
-      "backgroundColor": "rgba(0,0,0,.2)",
-      "isWholeLine": false
-    },
-    {
-      "text": "authProcedure",
-      "color": "red",
-      "border": "1px solid red",
-      "borderRadius": "4px",
-      "backgroundColor": "rgba(0,0,0,.2)",
-      "isWholeLine": false
-    },
-    {
-      "text": "publicProcedure",
-      "color": "green",
-      "border": "1px solid green",
-      "borderRadius": "4px",
-      "backgroundColor": "rgba(0,0,0,.2)",
-      "isWholeLine": false
+  // ===== Language-Specific Configuration =====
+  // Markdown
+  "[markdown]": {
+    "editor.formatOnSave": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
     }
+  },
+  // JavaScript
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JavaScript React
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // TypeScript
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // TypeScript React
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JSON with Comments
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // HTML
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Astro
+  "[astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // ===== Prettier =====
+  "prettier.documentSelectors": [
+    "**/*.astro"
   ],
-
-  // Token colorization (simplified to remove duplicates)
+  // ===== Additional Extensions =====
+  "readTime.enabled": true,
+  "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
+  "mdx.validate.validateFileLinks": "ignore",
+  "update.mode": "manual",
+  "telemetry.telemetryLevel": "crash",
+  "redhat.telemetry.enabled": false,
+  // ===== Token Colorization =====
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
